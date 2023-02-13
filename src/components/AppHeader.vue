@@ -34,9 +34,9 @@ export default {
                             MAIN TITLE
                         </h1>
                         <hr>
-                        <p class="py-md">
+                        <h5 class="py-md">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit, obcaecati.
-                        </p>
+                        </h5>
                         <button>
                             Button
                         </button>
