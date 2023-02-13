@@ -2,10 +2,8 @@
 
 export default {
     name: 'AppFooter',
-    data () {
-        return {
-
-        }
+    props: {
+        footerContact: Object
     }
 }
 

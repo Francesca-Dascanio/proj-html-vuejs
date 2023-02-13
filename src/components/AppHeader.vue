@@ -2,10 +2,8 @@
 
 export default {
     name: 'AppHeader',
-    data () {
-        return {
-
-        }
+    props: {
+        menu: Array
     }
 }
 

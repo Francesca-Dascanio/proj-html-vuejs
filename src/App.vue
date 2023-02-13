@@ -12,7 +12,24 @@ export default {
     },
     data () {
         return {
-
+            headerMenu: [
+                'Home',
+                'About Us',
+                'Services',
+                'Shop',
+                'Our Team',
+                'Blog',
+                'Contact Us'
+            ],
+            footerContacts: [
+                {
+                    name: 'Avada Barbers',
+                    address: '123 New York Street',
+                    city: 'New Yprk City',
+                    email: 'info@yourwebsite.com',
+                    phone: '+1 (555) 555-1212'
+                }
+            ]
         }
     }
 }
