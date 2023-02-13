@@ -101,7 +101,7 @@ export default {
                         </button>
                     </div>
                 </div>
-                <div class="sub-section-b">
+                <div class="sub-section-b container-sm">
                     <div class="sub-section-b-container flex">
                         <div class="sub-section-b-img">
                             IMG
@@ -232,9 +232,7 @@ export default {
 #section-3 {
     .container-lg {
     background-color: lightblue;
-    position: relative;
-    top: 0;
-    left: 0;
+    height: calc(100% - 30px);
 
         .sub-section-a {
             background-color: pink;
@@ -253,11 +251,7 @@ export default {
 
         .sub-section-b {
             background-color: fuchsia;
-            position: absolute;
-            width: 1100px;
-            left: 50%;
-            transform: translate(-50%);
-            top: 90%;
+            transform: translateY(-30px);
 
                 .sub-section-b-container {
 
@@ -278,8 +272,6 @@ export default {
 #section-4 {
     .container-lg {
     background-color: lightblue;
-    // Verifica in relazione all'altezza della sub-section-b
-    margin-top: 165px;
         .container-sm {
             background-color: lightcoral;
 
