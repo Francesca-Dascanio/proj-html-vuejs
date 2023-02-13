@@ -1,3 +1,46 @@
 @import './partials/reset.scss';
 @import './partials/variables.scss';
 @import './partials/mixins.scss';
+
+// REGOLE GENERALI - CONTAINERS
+.container-lg {
+    max-width: 100%;
+}
+
+.container-md {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.container-sm {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+// REGOLE GENERALI TITOLI
+
+h1, h2, h3 {
+    font-family: 'DM Serif Display', serif;
+}
+
+// REGOLE GENERALI FLEX
+.flex {
+    display: flex;
+}
+
+.space-btw {
+    justify-content: space-between;
+}
+
+.align-items {
+    align-items: center;
+}
+
+// REGOLE PADDING
+.py-lg {
+    padding: 3rem 0;
+}
+
+.py-md {
+    padding: 1rem 0;
+}

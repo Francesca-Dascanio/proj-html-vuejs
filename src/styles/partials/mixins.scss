@@ -1,1 +1,8 @@
 // Qui andrà mixin per button
+@mixin button($color, $background-color) {
+    border: 3px solid $primary-color;
+    padding: 0.5rem;
+    color: $color;
+    background-color: $background-color;
+
+}
