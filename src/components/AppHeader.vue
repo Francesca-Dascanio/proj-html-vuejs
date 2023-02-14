@@ -24,7 +24,7 @@ export default {
                 </nav>
             </div>
             <div class="header-bottom container-sm">
-                <div class="box flex align-items py-lg">
+                <div class="box flex space-btw align-items py-lg">
                     <div class="info">
                         <h1 class="py-md">
                             Barber Shop
@@ -36,6 +36,9 @@ export default {
                         <button>
                             LEARN MORE
                         </button>
+                    </div>
+                    <div class="img">
+                        <img src="../assets/avadabarbers_hero_focalmirror-400x550.png" alt="Barber">
                     </div>
                 </div>
             </div>
@@ -54,7 +57,6 @@ export default {
     background-repeat: no-repeat;
 
     .header-top {
-        // background-color: black;
         .logo {
             width: 150px;
 
@@ -75,13 +77,15 @@ export default {
     }
 
     .header-bottom {
-        // background-color: black;
         .box {
 
-            padding: 6rem 0;
+            padding: 1rem 0;
             .info {
+
+                width: 60%;
+
                 h1 {
-                    font-size: 3.5rem;
+                    font-size: 4rem;
                     color: $fifth-color;
                 }
 
@@ -100,6 +104,10 @@ export default {
                 button {
                     @include button ($primary-color, $fourth-color)
                 }
+            }
+
+            .img {
+                width: 40%;
             }
         }
     }
