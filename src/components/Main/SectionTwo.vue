@@ -47,12 +47,14 @@ export default {
                             <div class="card-img">
                                 <img :src="`/src/assets/${item.image}`" alt="Icon">
                             </div>
-                            <h3>
-                               {{ item.service }}
-                            </h3>
-                            <p>
-                                {{ item.description }}
-                            </p>
+                            <div class="card-contents">
+                                <h3>
+                                    {{ item.service }}
+                                </h3>
+                                <p>
+                                    {{ item.description }}
+                                </p>
+                            </div>
                         </div>
                         <!-- <div class="card text-center py-md">
                             Card 2
@@ -97,14 +99,25 @@ export default {
 
                         }
 
-                        // > .card-img {
-                        //     width: 80%;
-                        //     height: 100%;
-                        // }
+                        > .card-img {
 
-                        > p {
-                            padding: 0 1rem 1rem;
-                            font-size: 0.8rem;
+                            height: 60%;
+
+                             img {
+                                
+                                height: 110px;
+                                object-fit: cover;
+                             }
+                        }
+
+                        > .card-contents {
+
+                            height: 40%;
+
+                            p {
+                                padding: 0 1rem 1rem;
+                                font-size: 0.8rem;
+                            }
                         }
                     
                     }
