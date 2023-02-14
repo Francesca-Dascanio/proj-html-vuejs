@@ -36,6 +36,13 @@ h5 {
     color: $primary-color;
 }
 
+p {
+    font-size: 0.8rem;
+    color: $secondary-color;
+    line-height: 1.5rem;
+    padding: 0 1rem 1rem;
+}
+
 // REGOLE GENERALI FLEX
 .flex {
     display: flex;

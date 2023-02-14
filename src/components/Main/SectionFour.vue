@@ -54,12 +54,6 @@ export default {
                                 {{ item.reviewer }}
                             </h5>
                         </div>
-                        <!-- <div class="card text-center py-md">
-                            Card 2
-                        </div>
-                        <div class="card text-center py-md">
-                            Card 3
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -84,11 +78,8 @@ export default {
                         width: calc(100% / 4);
 
                         p {
-                            font-size: 0.8rem;
-                            color: $secondary-color;
                             padding-bottom: 1rem;
-                            line-height: 1.5rem;
-                            height: 50%;
+                            // height: 50%; tolta ma resta problema se lunghezza review differisce
                         }
 
                         .img-container {
@@ -110,6 +101,7 @@ export default {
                 }
             }
         }
+
     }
 }
 

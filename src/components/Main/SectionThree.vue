@@ -139,7 +139,6 @@ export default {
                                 height: 30%;
 
                                 p {
-                                    font-size: 0.8rem;
                                     color: $primary-color;
                                 }
                             }
