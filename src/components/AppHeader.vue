@@ -1,10 +1,7 @@
 <script>
 
 export default {
-    name: 'AppHeader',
-    props: {
-        menu: Array
-    }
+    name: 'AppHeader'
 }
 
 </script>
@@ -15,12 +12,13 @@ export default {
         <!-- In container-lg andrà background-image -->
         <div class="container-lg">
             <div class="header-top container-sm">
-                <nav class="flex space-btw">
+                <nav class="flex space-btw align-items">
                     <div class="logo">
-                        LOGO
+                        <img src="../assets/avadabarbers-logo-x2-200x70.png" alt="Avada Barbers">
                     </div>
-                    <div class="menu">
-                        MENU
+                    <div class="menu" @click="$emit('getClick')">
+                        <font-awesome-icon icon="fa-solid fa-cart-shopping" />
+                        <font-awesome-icon icon="fa-solid fa-bars" />
                     </div>
 
                 </nav>
@@ -29,14 +27,14 @@ export default {
                 <div class="box flex align-items py-lg">
                     <div class="info">
                         <h1 class="py-md">
-                            MAIN TITLE
+                            Barber Shop
                         </h1>
                         <hr>
                         <h5 class="py-md">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit, obcaecati.
+                            The Pinnacle of Male Grooming
                         </h5>
                         <button>
-                            Button
+                            LEARN MORE
                         </button>
                     </div>
                 </div>
@@ -50,21 +48,53 @@ export default {
 @import '../styles/partials/variables.scss';
 @import '../styles/partials/mixins.scss';
 .container-lg {
-    background-color: lightblue;
+    background-image: url('../assets/avadabarbers-homepage-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     .header-top {
-        background-color: yellow;
+        // background-color: black;
+        .logo {
+            width: 150px;
+
+            img {
+                width: 100%;
+                padding: 1rem 0;
+            }
+        }
+
+        .menu {
+            color: $fifth-color;
+            
+            > * {
+                margin-left: 20px;
+                padding: 1rem 0 1rem 1rem;
+            }
+        }
     }
 
     .header-bottom {
-        background-color: orange;
-
+        // background-color: black;
         .box {
+
+            padding: 6rem 0;
             .info {
+                h1 {
+                    font-size: 3.5rem;
+                    color: $fifth-color;
+                }
+
                 hr {
-                    border-width: 0.5px;
+                    border-width: 1px;
                     border-style: solid;
                     width: 20%;
+                    color: $primary-color;
+                }
+
+                h5 {
+                    color: $secondary-color;
+                    font-weight: lighter;
                 }
 
                 button {

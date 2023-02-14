@@ -32,6 +32,10 @@ h1, h2, h3 {
     justify-content: space-between;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
 .align-items {
     align-items: center;
 }
@@ -56,4 +60,9 @@ h1, h2, h3 {
 
 .text-right {
     text-align: right;
+}
+
+// REGOLE VISIBILITA'
+.not-visible {
+    display: none;
 }

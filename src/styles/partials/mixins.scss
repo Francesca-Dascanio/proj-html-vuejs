@@ -2,6 +2,8 @@
 @mixin button($color, $background-color) {
     border: 3px solid $primary-color;
     padding: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
     color: $color;
     background-color: $background-color;
 

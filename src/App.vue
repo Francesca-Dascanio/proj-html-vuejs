@@ -12,6 +12,7 @@ export default {
     },
     data () {
         return {
+            clicked: false,
             headerMenu: [
                 'Home',
                 'About Us',
@@ -31,20 +32,87 @@ export default {
                 }
             ]
         }
-    }
+    },
+    // methods: {
+    //     getMenu: function () {
+    //         return this.clicked = true;
+
+    //     }
+    // }
 }
 
 </script>
 
 <template>
 
-    <AppHeader />
-    <AppMain />
-    <AppFooter />
-  
+    <div class="general-container" 
+    :class="{
+        '': clicked == false,
+        'not-visible': clicked == true
+    }">
+        <AppHeader @getClick="clicked = true" />
+        <AppMain />
+        <AppFooter />
+    </div>
+
+    <div class="general-menu" 
+    :class="{
+        'not-visible': clicked == false,
+        '': clicked == true
+    }">
+        <div class="exit text-right" @click="clicked = false">
+            <font-awesome-icon icon="fa-solid fa-xmark" />
+        </div>
+        <div class="menu-container flex justify-center align-items">
+            <ul > 
+                <li v-for="info in headerMenu">
+                    <a href="#">
+                        {{ info }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
 </template>
 
 <style lang="scss">
 @import './styles/main.scss';
+
+.general-menu {
+    background-color: $fourth-color;
+    color: $fifth-color;
+    width: 100%;
+    height: 100vh;
+
+        .exit {
+            padding: 1rem;
+        }
+
+       .menu-container {
+
+            height: 100%;
+
+            ul {
+                list-style: none;
+
+                li {
+                    text-align: center;
+                    padding: 0.5rem;
+
+                    a {
+                        text-decoration: none;
+                        color: $fifth-color;
+                        padding: 0.5rem;
+
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+       }
+
+}
 
 </style>
