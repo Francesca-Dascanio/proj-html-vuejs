@@ -27,10 +27,10 @@ export default {
             </div>
             <div class="footer-bottom container-lg">
                 <p class="container-sm text-center py-md">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dolores voluptas ab blanditiis nam sunt?
+                    &#169; Copyright 2012 - 2020 | Avada Theme By ThemeFusion | All Rights Reserved | Powered by Vite + Vue
                 </p>
-                <div class="container-md text-right">
-                    Bottone
+                <div class="btn-up container-md text-right">
+                    <font-awesome-icon icon="fa-solid fa-chevron-up" />
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+@import '../styles/partials/variables.scss';
 .container-lg {
 
     background-color: lightblue;
@@ -56,7 +56,21 @@ export default {
     }
 
     .footer-bottom {
-        background-color: orange;
+        background-color: $sixth-color;
+
+        p {
+            padding: 1rem 0 0 0;
+        }
+
+        .btn-up {
+            color: $third-color;
+
+            > * {
+                background-color: $seventh-color;
+                padding: 1rem 1rem 0 1rem;
+                border-radius: 5px 5px 0 0;
+            }
+        }
     }
 }
 
