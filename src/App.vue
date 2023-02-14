@@ -32,13 +32,7 @@ export default {
                 }
             ]
         }
-    },
-    // methods: {
-    //     getMenu: function () {
-    //         return this.clicked = true;
-
-    //     }
-    // }
+    }
 }
 
 </script>
