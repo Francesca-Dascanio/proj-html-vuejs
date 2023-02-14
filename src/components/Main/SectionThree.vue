@@ -2,6 +2,32 @@
 
 export default {
     name: 'SectionThree',
+    data () {
+        return {
+            products: [
+                {
+                    product: 'Brush',
+                    price: '$ 15.00',
+                    image: 'brush_dark-200x200.png'
+                },
+                {
+                    product: 'Scissors',
+                    price: '$ 85.00',
+                    image: 'scissors-200x200.png'
+                },
+                {
+                    product: 'Hot Oil',
+                    price: '$ 15.00',
+                    image: 'hot_oil_dark-200x200.png'
+                },
+                {
+                    product: 'Straight Razor',
+                    price: '$ 30.00',
+                    image: 'straight_razor_dark-200x200.png'
+                }
+            ]
+        }
+    }
     
 }
 
@@ -13,30 +39,31 @@ export default {
             <div class="sub-section-a container-lg">
                 <div class="section-title text-center py-md">
                     <h5>
-                    Lorem ipsum dolor sit.
+                        WE HAVE YOU COVERED
                     </h5>
                     <h2>
-                        SECTION 3 TITLE
+                        Avada Grooming Products
                     </h2>
                 </div>
 
                 <div class="section-contents flex align-items py-md">
-                    <div class="cards flex">
-                        <div class="card text-center py-md">
-                            Card 1
-                        </div>
-                        <div class="card text-center py-md">
-                            Card 2
-                        </div>
-                        <div class="card text-center py-md">
-                            Card 3
-                        </div>
-                        <div class="card text-center py-md">
-                            Card 4
+                    <div class="cards flex space-btw align-items">
+                        <div class="card text-center py-md" v-for="item in products">
+                            <div class="card-img">
+                                <img :src="`/src/assets/${item.image}`" alt="Icon">
+                            </div>
+                            <div class="card-contents">
+                                <h3>
+                                    {{ item.product }}
+                                </h3>
+                                <p>
+                                    {{ item.price }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <button class="mb-lg">
-                        Button
+                        SHOP OUR PRODUCT RANGE
                     </button>
                 </div>
             </div>
@@ -71,20 +98,54 @@ export default {
 
 #section-3 {
     .container-lg {
-    background-color: lightblue;
-    height: calc(100% - 30px);
 
         .sub-section-a {
-            background-color: pink;
+            height: calc(100% - 30px);
+            background-image: url('/src/assets/avadabarbers-reviewsbackground.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-bottom: 4rem;
 
                 .section-contents {
                     flex-direction: column;
 
                     .cards {
                         width: 100%;
+                        height: 90%;
                         .card {
-                            width: calc(100% / 4);
+                            width: calc(100% / 5);
+
+                            > * {
+                            padding-bottom: 1rem;
+
+                            }
+
+                            > .card-img {
+
+                                height: 70%;
+
+                                img {
+                                    
+                                    object-fit: cover;
+                                }
+                            }
+
+                            > .card-contents {
+
+                                height: 30%;
+
+                                p {
+                                    font-size: 0.8rem;
+                                    color: $primary-color;
+                                }
+                            }
                         }
+                    }
+
+                    button {
+                        @include button;
+                        height: 10%;
                     }
                 }
         }

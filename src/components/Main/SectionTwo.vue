@@ -56,12 +56,6 @@ export default {
                                 </p>
                             </div>
                         </div>
-                        <!-- <div class="card text-center py-md">
-                            Card 2
-                        </div>
-                        <div class="card text-center py-md">
-                            Card 3
-                        </div> -->
                     </div>
 
                     <button>
@@ -70,7 +64,7 @@ export default {
                 </div>
             </div>
             <div class="container-lg triangle">
-                <svg class="fusion-big-triangle-candy" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="60px" viewBox="0 0 100 100" preserveAspectRatio="none" style="fill:#000000;padding:0;"><path d="M0 100 L50 2 L100 100 Z"></path></svg>
+                <svg class="fusion-big-triangle-candy" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="60px" viewBox="0 0 100 100" preserveAspectRatio="none" style="fill:#131315;padding:0;"><path d="M0 100 L50 2 L100 100 Z"></path></svg>
             </div>
         </div>
     </section>
