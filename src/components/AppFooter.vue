@@ -3,7 +3,7 @@
 export default {
     name: 'AppFooter',
     props: {
-        footerContact: Object
+        footerContacts: Array
     }
 }
 
@@ -13,15 +13,64 @@ export default {
     <footer>
         <div class="container-lg">
             <div class="footer-top container-sm">
-                <div class="cards flex">
-                    <div class="card">
-                        Card 1
+                <div class="cards flex space-btw">
+                    <div class="card flex align-items space-btw">
+                        <div class="card-img">
+                            <img src="/src/assets/avadabarbers_footer_shop_image-400x312.png" alt="Image">
+                        </div>
+                        <div class="card-button">
+                            <button>
+                                SHOP OUR RANGE NOW
+                            </button>
+                        </div>
                     </div>
-                    <div class="card">
-                        Card 2
+                    <div class="card flex align-items">
+                        <div class="footer-logo">
+                            <img src="/src/assets/avadabarbers-logo-x1.png" alt="Footer-Logo">
+                        </div>
+                        <div class="footer-contacts text-center">
+                            <ul>
+                                <li v-for="contact in footerContacts">
+                                    <a href="#">
+                                        {{ contact }}   
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-socials">
+                            <ul class="flex">
+                                <li>
+                                    <a href="#">
+                                        <font-awesome-icon icon="fa-brands fa-facebook" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <font-awesome-icon icon="fa-brands fa-twitter" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <font-awesome-icon icon="fa-brands fa-youtube" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <font-awesome-icon icon="fa-brands fa-instagram" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="card">
-                        Card 3
+                    <div class="card flex align-items space-btw">
+                        <div class="card-img">
+                            <img src="/src/assets/avadabarbers_footer_appointment_image-400x312.png" alt="Image">
+                        </div>
+                        <div class="card-button">
+                            <button>
+                                BOOK AN APPOINTMENT
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,17 +89,73 @@ export default {
 
 <style lang="scss" scoped>
 @import '../styles/partials/variables.scss';
+@import '../styles/partials/mixins.scss';
 .container-lg {
 
-    background-color: lightblue;
+    background-color: $fourth-color;
     .footer-top {
-
-        background-color: yellow;
         .cards {
             width: 100%;
+            padding: 2rem 0;
 
             .card {
-                width: calc(100% / 3);
+                width: calc(100% / 4);
+                flex-direction: column;
+
+                .card-img {
+                    width: 80%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .footer-logo {
+                    width: 60%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .footer-contacts {
+                    padding: 2rem 0;
+
+                    ul {
+                        list-style: none;
+
+                        li {
+
+                            a {
+                                color: $secondary-color;
+                                text-decoration: none;
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+                }
+
+                .footer-socials {
+                    ul {
+                        list-style: none;
+
+                        li {
+                            padding: 0.5rem;
+
+                            a {
+                                color: $secondary-color;
+                                text-decoration: none;
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+
+
+                }
+
+                button {
+                    @include button;
+                }
             }
         }
     }

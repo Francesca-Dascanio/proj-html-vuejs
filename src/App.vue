@@ -23,13 +23,11 @@ export default {
                 'Contact Us'
             ],
             footerContacts: [
-                {
-                    name: 'Avada Barbers',
-                    address: '123 New York Street',
-                    city: 'New Yprk City',
-                    email: 'info@yourwebsite.com',
-                    phone: '+1 (555) 555-1212'
-                }
+                'Avada Barbers',
+                '123 New York Street',
+                'New York City',
+                'info@yourwebsite.com',
+                '+1 (555) 555-1212'
             ]
         }
     }
@@ -46,7 +44,7 @@ export default {
     }">
         <AppHeader @getClick="clicked = true" />
         <AppMain />
-        <AppFooter />
+        <AppFooter :footerContacts="footerContacts"/>
     </div>
 
     <div class="general-menu" 
