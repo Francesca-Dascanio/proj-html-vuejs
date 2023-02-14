@@ -8,22 +8,22 @@ export default {
                 {
                     product: 'Brush',
                     price: '$ 15.00',
-                    image: 'brush_dark-200x200.png'
+                    image: 'brush_dark.png'
                 },
                 {
                     product: 'Scissors',
                     price: '$ 85.00',
-                    image: 'scissors-200x200.png'
+                    image: 'scissors.png'
                 },
                 {
                     product: 'Hot Oil',
                     price: '$ 15.00',
-                    image: 'hot_oil_dark-200x200.png'
+                    image: 'hot_oil_dark.png'
                 },
                 {
                     product: 'Straight Razor',
                     price: '$ 30.00',
-                    image: 'straight_razor_dark-200x200.png'
+                    image: 'straight_razor_dark.png'
                 }
             ]
         }
@@ -69,22 +69,24 @@ export default {
             </div>
             <div class="sub-section-b container-sm">
                 <div class="sub-section-b-container flex">
-                    <div class="sub-section-b-img">
-                        IMG
+                    <div class="sub-section-b-img flex justify-center align-items">
+                        <div class="img-container">
+                            <img src="/src/assets/shaving_butter.png" alt="Shaving Butter" />
+                        </div>
                     </div>
 
                     <div class="sub-section-b-contents py-md">
                         <h5>
-                            Lorem ipsum dolor sit amet.
+                            THIS MONTHS FEATURED PRODUCT
                         </h5>
                         <h2>
-                            SUB-SECTION-B-TITLE
+                            Shaving Butter
                         </h2>
                         <p class="py-md">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora enim, inventore aspernatur nisi sint eius quibusdam dicta corporis repellendus aut obcaecati dolore, dolorem consequuntur debitis deleniti quidem atque suscipit quas deserunt omnis animi voluptas eos.
                         </p>
                         <button>
-                            Button
+                            BUY NOW
                         </button>
                     </div>
                 </div>
@@ -100,7 +102,7 @@ export default {
     .container-lg {
 
         .sub-section-a {
-            height: calc(100% - 30px);
+            // height: calc(100% - 30px);
             background-image: url('/src/assets/avadabarbers-reviewsbackground.jpg');
             background-size: cover;
             background-position: center;
@@ -127,6 +129,7 @@ export default {
 
                                 img {
                                     
+                                    height: 200px;
                                     object-fit: cover;
                                 }
                             }
@@ -151,17 +154,38 @@ export default {
         }
 
         .sub-section-b {
-            background-color: fuchsia;
             transform: translateY(-30px);
 
                 .sub-section-b-container {
-
+                    border-top: 2px solid $primary-color;
                     .sub-section-b-img {
                         width: 30%;
+                        background-image: url('/src/assets/avadabarbers-second-blog-700x441.jpg');
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        filter: grayscale(1);
+
+                            .img-container {
+                                img {
+                                    width: 100%;
+                                }
+                            }
                     }
 
                     .sub-section-b-contents {
                         width: 70%;
+                        padding: 2rem;
+                        background-color: $fourth-color;
+
+                        > p {
+                            font-size: 0.8rem;
+                            color: $secondary-color;
+                        }
+
+                        > button {
+                            @include button;
+                        }
                     }
 
                 }
