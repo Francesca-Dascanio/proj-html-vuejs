@@ -154,7 +154,7 @@ export default {
         }
 
         .sub-section-b {
-            transform: translateY(-30px);
+            transform: translateY(-2rem);
 
                 .sub-section-b-container {
                     border-top: 2px solid $primary-color;
