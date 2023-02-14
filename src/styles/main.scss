@@ -23,6 +23,15 @@ h1, h2, h3 {
     font-family: 'DM Serif Display', serif;
 }
 
+h2 {
+    color: $secondary-color;
+    font-size: 3rem;
+}
+
+h5 {
+    color: $primary-color;
+}
+
 // REGOLE GENERALI FLEX
 .flex {
     display: flex;

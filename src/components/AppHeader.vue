@@ -30,9 +30,9 @@ export default {
                             Barber Shop
                         </h1>
                         <hr>
-                        <h5 class="py-md">
+                        <p class="py-md">
                             The Pinnacle of Male Grooming
-                        </h5>
+                        </p>
                         <button>
                             LEARN MORE
                         </button>
@@ -96,13 +96,13 @@ export default {
                     color: $primary-color;
                 }
 
-                h5 {
+                p {
                     color: $secondary-color;
                     font-weight: lighter;
                 }
 
                 button {
-                    @include button ($primary-color, $fourth-color)
+                    @include button;
                 }
             }
 
