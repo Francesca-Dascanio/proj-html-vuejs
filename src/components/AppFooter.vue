@@ -146,7 +146,7 @@ export default {
                 }
 
                 button {
-                    @include button;
+                    @include button ($fourth-color);
                 }
             }
         }

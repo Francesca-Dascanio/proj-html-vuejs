@@ -47,7 +47,7 @@ export default {
                 flex-direction: column;
 
                 button {
-                    @include button;
+                    @include button ($fourth-color);
                 }
             }
         }

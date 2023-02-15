@@ -16,7 +16,6 @@ export default {
     },
     data () {
         return {
-            // Qui andranno data delle section-cards
         }
     }
 }

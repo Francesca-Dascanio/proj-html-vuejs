@@ -135,7 +135,7 @@ export default {
                     }
 
                     button {
-                        @include button;
+                        @include button ($fourth-color);
                     }
                 }
         }
@@ -164,7 +164,7 @@ export default {
                         background-color: $fourth-color;
 
                         > button {
-                            @include button;
+                            @include button ($fourth-color);
                         }
                     }
 

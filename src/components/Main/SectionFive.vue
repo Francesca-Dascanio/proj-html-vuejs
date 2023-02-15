@@ -119,7 +119,7 @@ export default {
                 }
 
                 button {
-                        @include button;
+                        @include button ($third-color);
                     }
             }
         }
