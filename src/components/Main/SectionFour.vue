@@ -43,16 +43,16 @@ export default {
 
                 <div class="section-contents flex align-items py-md">
                     <div class="cards flex space-btw">
-                        <div class="card text-center py-md" v-for="item in reviews">
+                        <div class="card text-center py-md flex space-btw align-items" v-for="item in reviews">
                             <p>
                                 {{ item.review }}
                             </p>
                             <div class="img-container">
                                 <img :src="`/src/assets/${item.image}`" :alt="item.reviewer">
+                                <h5>
+                                    {{ item.reviewer }}
+                                </h5>
                             </div>
-                            <h5>
-                                {{ item.reviewer }}
-                            </h5>
                         </div>
                     </div>
                 </div>
@@ -67,26 +67,24 @@ export default {
 
 #section-4 {
     .container-lg {
-
+        padding-top: 2rem;
         .container-sm {
 
             .section-contents {
                 .cards {
-
                     width: 100%;
                     .card {
                         width: calc(100% / 4);
+                        flex-direction: column;
 
                         p {
                             padding-bottom: 1rem;
-                            // height: 50%; tolta ma resta problema se lunghezza review differisce
                         }
 
                         .img-container {
                             display: inline-block;
                             padding: 1rem 0;
                             width: 50%;
-                            border-radius: 50%;
 
                             img {
                                 width: 100%;
@@ -96,6 +94,7 @@ export default {
 
                         h5 {
                             font-style: italic;
+                            margin-top: 0.5rem;
                         }
                     }
                 }

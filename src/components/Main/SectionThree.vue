@@ -75,7 +75,7 @@ export default {
                         </div>
                     </div>
 
-                    <div class="sub-section-b-contents py-md">
+                    <div class="sub-section-b-contents py-md flex space-btw">
                         <h5>
                             THIS MONTHS FEATURED PRODUCT
                         </h5>
@@ -102,11 +102,7 @@ export default {
     .container-lg {
 
         .sub-section-a {
-            // height: calc(100% - 30px);
-            background-image: url('/src/assets/avadabarbers-reviewsbackground.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            @include bg-image ('/src/assets/avadabarbers-reviewsbackground.jpg', center);
             padding-bottom: 4rem;
 
                 .section-contents {
@@ -114,9 +110,9 @@ export default {
 
                     .cards {
                         width: 100%;
-                        height: 90%;
                         .card {
                             width: calc(100% / 5);
+                            margin-bottom: 1rem;
 
                             > * {
                             padding-bottom: 1rem;
@@ -124,20 +120,13 @@ export default {
                             }
 
                             > .card-img {
-
-                                height: 70%;
-
                                 img {
-                                    
-                                    height: 200px;
+                                    width: 100%;
                                     object-fit: cover;
                                 }
                             }
 
                             > .card-contents {
-
-                                height: 30%;
-
                                 p {
                                     color: $primary-color;
                                 }
@@ -147,7 +136,6 @@ export default {
 
                     button {
                         @include button;
-                        height: 10%;
                     }
                 }
         }
@@ -159,12 +147,8 @@ export default {
                     border-top: 2px solid $primary-color;
                     .sub-section-b-img {
                         width: 30%;
-                        background-image: url('/src/assets/avadabarbers-second-blog-700x441.jpg');
-                        background-position: center;
-                        background-size: cover;
-                        background-repeat: no-repeat;
+                        @include bg-image ('/src/assets/avadabarbers-second-blog-700x441.jpg', cover);
                         filter: grayscale(1);
-
                             .img-container {
                                 img {
                                     width: 100%;
@@ -173,14 +157,11 @@ export default {
                     }
 
                     .sub-section-b-contents {
+                        flex-direction: column;
+                        align-items: flex-start;
                         width: 70%;
                         padding: 2rem;
                         background-color: $fourth-color;
-
-                        > p {
-                            font-size: 0.8rem;
-                            color: $secondary-color;
-                        }
 
                         > button {
                             @include button;

@@ -88,12 +88,11 @@ export default {
                 }
         }
         .container-sm {
-            padding-top: 2rem;
+            padding: 3rem 0;
             .section-contents {
                 flex-direction: column;
 
                 .cards {
-
                     width: 100%;
                     .card {
                         width: calc(100% / 4);
@@ -105,19 +104,16 @@ export default {
 
                         > .card-img {
 
-                            height: 70%;
-
                              img {
-                                height: 200px;
                                 width: 100%;
                                 object-fit: cover;
                              }
                         }
 
                         > .card-contents {
-                            height: 30%;
-
+                            width: 100%;
                         }
+
                     }
 
                 }
