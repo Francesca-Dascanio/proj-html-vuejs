@@ -2,17 +2,20 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
+import AppModal from './components/AppModal.vue';
 
 export default {
     name: 'App',
     components: {
         AppHeader,
         AppMain,
-        AppFooter
+        AppFooter,
+        AppModal
     },
     data () {
         return {
             clicked: false,
+            appointment: false,
             headerMenu: [
                 {
                     menuSection: 'Home',
@@ -57,12 +60,26 @@ export default {
                 'fa-brands fa-instagram',
             ]
         }
+    },
+    methods: {
+        book: function () {
+            alert('CONFIRMATION: your appointment is successfully submitted!')
+        }
     }
+
 }
 
 </script>
 
 <template>
+    <div class="overlay"
+    :class="{
+        'not-visible': appointment == false,
+        'visible': appointment == true
+    }">
+        <AppModal @getOff="appointment = false" @book="book()"/>
+    </div>
+
     <div class="general-container" 
     :class="{
         '': clicked == false,
@@ -70,9 +87,8 @@ export default {
     }">
         <AppHeader @getClick="clicked = true" />
         <AppMain />
-        <AppFooter :footerContacts="footerContacts" :footerSocials="footerSocials"/>
+        <AppFooter :footerContacts="footerContacts" :footerSocials="footerSocials" @getOn="appointment = true"/>
     </div>
-
 
     <div class="general-menu" 
     :class="{
@@ -97,6 +113,20 @@ export default {
 
 <style lang="scss">
 @import './styles/main.scss';
+
+.overlay {
+    position: fixed;
+    // display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
 
 .general-menu {
     background-color: $fourth-color;

@@ -60,7 +60,7 @@ export default {
                         <div class="card-img">
                             <img src="/src/assets/avadabarbers_footer_appointment_image-400x312.png" alt="Image">
                         </div>
-                        <button>
+                        <button @click="$emit('getOn')">
                             BOOK AN APPOINTMENT
                         </button>
                     </div>
