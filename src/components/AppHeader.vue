@@ -7,26 +7,36 @@ export default {
 </script>
 
 <template>
-
-    <header>
-        <!-- In container-lg andrà background-image -->
+    <header id="header">
         <div class="container-lg">
+            <!-- Inizio Header Top -->
             <div class="header-top container-sm">
                 <nav class="flex space-btw align-items">
                     <div class="logo">
                         <img src="../assets/avadabarbers-logo-x2-200x70.png" alt="Avada Barbers">
                     </div>
-                    <div class="menu" @click="$emit('getClick')">
-                        <font-awesome-icon icon="fa-solid fa-cart-shopping" />
-                        <font-awesome-icon icon="fa-solid fa-bars" />
+                    <div class="menu">
+                        <ul class="flex">
+                            <li>
+                                <a href="#">
+                                    <font-awesome-icon icon="fa-solid fa-cart-shopping" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" @click="$emit('getClick')">
+                                    <font-awesome-icon icon="fa-solid fa-bars" />
+                                </a>
+                            </li>
+                        </ul> 
                     </div>
-
                 </nav>
             </div>
+
+             <!-- Inizio Header Bottom -->
             <div class="header-bottom container-sm">
-                <div class="box flex space-btw align-items py-lg">
+                <div class="box flex space-btw align-items">
                     <div class="info">
-                        <h1 class="py-md">
+                        <h1>
                             Barber Shop
                         </h1>
                         <hr>
@@ -37,7 +47,7 @@ export default {
                             LEARN MORE
                         </button>
                     </div>
-                    <div class="img">
+                    <div class="img-container">
                         <img src="../assets/avadabarbers_hero_focalmirror-400x550.png" alt="Barber">
                     </div>
                 </div>
@@ -51,12 +61,9 @@ export default {
 @import '../styles/partials/variables.scss';
 @import '../styles/partials/mixins.scss';
 .container-lg {
-    background-image: url('../assets/avadabarbers-homepage-hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    @include bg-image ('../assets/avadabarbers-homepage-hero-bg.jpg', center);
 
-    .header-top {
+    .header-top {        
         .logo {
             width: 150px;
 
@@ -67,21 +74,26 @@ export default {
         }
 
         .menu {
-            color: $fifth-color;
-            
-            > * {
-                margin-left: 20px;
-                padding: 1rem 0 1rem 1rem;
-            }
+            ul {
+                
+                list-style: none;
+
+                    li {
+                        a {
+                            @include a ($third-color);
+                            margin-left: 20px;
+                            padding: 1rem 0 1rem 1rem;
+                        }
+                    }
+                }
         }
     }
 
     .header-bottom {
         .box {
-
-            padding: 1rem 0;
             .info {
 
+                padding-bottom: 5rem;
                 width: 60%;
 
                 h1 {
@@ -92,13 +104,8 @@ export default {
                 hr {
                     border-width: 1px;
                     border-style: solid;
-                    width: 20%;
+                    width: 30%;
                     color: $primary-color;
-                }
-
-                p {
-                    color: $secondary-color;
-                    font-weight: lighter;
                 }
 
                 button {
@@ -106,8 +113,12 @@ export default {
                 }
             }
 
-            .img {
+            .img-container {
                 width: 40%;
+
+                img {
+                    width: 100%;
+                }
             }
         }
     }

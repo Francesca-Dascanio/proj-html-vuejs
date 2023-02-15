@@ -39,13 +39,10 @@ export default {
 
 #section-1 {
     .bg-img {
-    background-image: url('/src/assets/avadabarbers-about-introbackground.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+        @include bg-image ('/src/assets/avadabarbers-about-introbackground.jpg', initial);
         .container-sm {
 
-            padding: 2rem 0 4rem 0;
+            padding: 3rem 0;
             .section-contents {
                 flex-direction: column;
 
@@ -58,7 +55,6 @@ export default {
         .triangle {
             width: 100%;
             height: 60px;
-
         }
     }
 }

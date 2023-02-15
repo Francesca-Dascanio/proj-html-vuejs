@@ -28,6 +28,12 @@ export default {
                 'New York City',
                 'info@yourwebsite.com',
                 '+1 (555) 555-1212'
+            ],
+            footerSocials: [
+                'fa-brands fa-facebook',
+                'fa-brands fa-twitter',
+                'fa-brands fa-youtube',
+                'fa-brands fa-instagram',
             ]
         }
     }
@@ -44,7 +50,7 @@ export default {
     }">
         <AppHeader @getClick="clicked = true" />
         <AppMain />
-        <AppFooter :footerContacts="footerContacts"/>
+        <AppFooter :footerContacts="footerContacts" :footerSocials="footerSocials"/>
     </div>
 
     <div class="general-menu" 

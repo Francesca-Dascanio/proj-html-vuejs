@@ -3,26 +3,26 @@
 export default {
     name: 'AppFooter',
     props: {
-        footerContacts: Array
+        footerContacts: Array,
+        footerSocials: Array
     }
 }
 
 </script>
 
 <template>
-    <footer>
+    <footer id="footer">
         <div class="container-lg">
+            <!-- Inizio Footer Top -->
             <div class="footer-top container-sm">
                 <div class="cards flex space-btw">
-                    <div class="card flex align-items space-btw">
+                    <div class="card flex space-btw align-items">
                         <div class="card-img">
                             <img src="/src/assets/avadabarbers_footer_shop_image-400x312.png" alt="Image">
                         </div>
-                        <div class="card-button">
-                            <button>
-                                SHOP OUR RANGE NOW
-                            </button>
-                        </div>
+                        <button>
+                            SHOP OUR RANGE NOW
+                        </button>
                     </div>
                     <div class="card flex align-items">
                         <div class="footer-logo">
@@ -39,24 +39,9 @@ export default {
                         </div>
                         <div class="footer-socials">
                             <ul class="flex">
-                                <li>
+                                <li v-for="social in footerSocials">
                                     <a href="#">
-                                        <font-awesome-icon icon="fa-brands fa-facebook" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <font-awesome-icon icon="fa-brands fa-twitter" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <font-awesome-icon icon="fa-brands fa-youtube" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <font-awesome-icon icon="fa-brands fa-instagram" />
+                                        <font-awesome-icon :icon="social" />
                                     </a>
                                 </li>
                             </ul>
@@ -66,21 +51,21 @@ export default {
                         <div class="card-img">
                             <img src="/src/assets/avadabarbers_footer_appointment_image-400x312.png" alt="Image">
                         </div>
-                        <div class="card-button">
-                            <button>
-                                BOOK AN APPOINTMENT
-                            </button>
-                        </div>
+                        <button>
+                            BOOK AN APPOINTMENT
+                        </button>
                     </div>
                 </div>
             </div>
+
+             <!-- Inizio Footer Bottom -->
             <div class="footer-bottom container-lg">
                 <p class="container-sm text-center py-md">
                     &#169; Copyright 2012 - 2020 | Avada Theme By ThemeFusion | All Rights Reserved | Powered by Vite + Vue
                 </p>
-                <div class="btn-up container-md text-right">
+                <button class="container-md text-right">
                     <font-awesome-icon icon="fa-solid fa-chevron-up" />
-                </div>
+                </button>
             </div>
         </div>
     </footer>
@@ -127,8 +112,7 @@ export default {
                         li {
 
                             a {
-                                color: $secondary-color;
-                                text-decoration: none;
+                                @include a ($secondary-color);
                                 font-size: 0.8rem;
                             }
                         }
@@ -143,8 +127,7 @@ export default {
                             padding: 0.5rem;
 
                             a {
-                                color: $secondary-color;
-                                text-decoration: none;
+                                @include a ($secondary-color);
                                 font-size: 0.8rem;
                             }
                         }
@@ -162,17 +145,22 @@ export default {
 
     .footer-bottom {
         background-color: $sixth-color;
+        position: relative;
+        left: 0;
+        top: 0;
 
-        p {
-            padding: 1rem 0 0 0;
-        }
-
-        .btn-up {
+        button {
+            position: absolute;
+            right: 0;
+            bottom: 0;
             color: $third-color;
+            border-style: none;
+            background-color: transparent;
+            border: 1px solid $sixth-color;
 
             > * {
                 background-color: $seventh-color;
-                padding: 1rem 1rem 0 1rem;
+                padding: 0.5rem;
                 border-radius: 5px 5px 0 0;
             }
         }

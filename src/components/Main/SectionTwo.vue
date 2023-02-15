@@ -32,7 +32,7 @@ export default {
     <section id="section-2">
         <div class="container-lg">
             <div class="container-sm">
-                <div class="section-title text-center py-md">
+                <div class="section-title text-center">
                     <h5>
                         MENS GROOMING SERVICES
                     </h5>
@@ -43,7 +43,7 @@ export default {
 
                 <div class="section-contents flex align-items py-md">
                     <div class="cards flex space-btw">
-                        <div class="card text-center py-md" v-for="item in services">
+                        <div class="card text-center" v-for="item in services">
                             <div class="card-img">
                                 <img :src="`/src/assets/${item.image}`" alt="Icon">
                             </div>
@@ -76,27 +76,23 @@ export default {
 #section-2 {
     .container-lg {
         .container-sm {
-
             padding: 2rem 0 4rem 0;
+
+            .section-title {
+                padding: 1rem 0 2rem 0;
+            }
             
             .section-contents {
                 flex-direction: column;
 
                 .cards {
-
                     width: 100%;
+
                     .card {
                         width: calc(100% / 4);
-
-                        > * {
-                            padding-bottom: 1rem;
-
-                        }
+                        margin-bottom: 2rem;
 
                         > .card-img {
-
-                            height: 60%;
-
                              img {
                                 
                                 height: 110px;
@@ -105,8 +101,9 @@ export default {
                         }
 
                         > .card-contents {
-
-                            height: 40%;
+                            h3 {
+                                padding: 1rem 0;
+                            }
 
                         }
                     
