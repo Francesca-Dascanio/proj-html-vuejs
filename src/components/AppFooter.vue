@@ -5,6 +5,15 @@ export default {
     props: {
         footerContacts: Array,
         footerSocials: Array
+    },
+    methods: {
+        scrollTop: function () {
+            window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+            });
+        }
     }
 }
 
@@ -63,7 +72,7 @@ export default {
                 <p class="container-sm text-center py-md">
                     &#169; Copyright 2012 - 2020 | Avada Theme By ThemeFusion | All Rights Reserved | Powered by Vite + Vue
                 </p>
-                <button class="container-md text-right">
+                <button class="container-md text-right" @click="scrollTop()">
                     <font-awesome-icon icon="fa-solid fa-chevron-up" />
                 </button>
             </div>

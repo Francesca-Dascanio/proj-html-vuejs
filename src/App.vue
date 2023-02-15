@@ -14,13 +14,34 @@ export default {
         return {
             clicked: false,
             headerMenu: [
-                'Home',
-                'About Us',
-                'Services',
-                'Shop',
-                'Our Team',
-                'Blog',
-                'Contact Us'
+                {
+                    menuSection: 'Home',
+                    link: '#'
+                },
+                {
+                    menuSection: 'About Us',
+                    link: '#'
+                },
+                {
+                    menuSection: 'Services',
+                    link: '#section-2'
+                },
+                {
+                    menuSection: 'Shop',
+                    link: '#'
+                },
+                {
+                    menuSection: 'Our Team',
+                    link: '#'
+                },
+                {
+                    menuSection: 'Blog',
+                    link: '#section-5'
+                },
+                {
+                    menuSection: 'Contact Us',
+                    link: '#footer'
+                }
             ],
             footerContacts: [
                 'Avada Barbers',
@@ -59,13 +80,13 @@ export default {
         '': clicked == true
     }">
         <div class="exit text-right" @click="clicked = false">
-            <font-awesome-icon icon="fa-solid fa-xmark" />
+            <font-awesome-icon icon="fa-solid fa-xmark" size="xl" />
         </div>
         <div class="menu-container flex justify-center align-items">
             <ul > 
-                <li v-for="info in headerMenu">
-                    <a href="#">
-                        {{ info }}
+                <li v-for="info in headerMenu" @click="clicked = false">
+                    <a :href="info.link">
+                        {{ info.menuSection }}
                     </a>
                 </li>
             </ul>
@@ -84,12 +105,14 @@ export default {
     height: 100vh;
 
         .exit {
-            padding: 1rem;
+            padding: 2rem;
+            cursor: pointer;
         }
 
        .menu-container {
 
             height: 100%;
+            background-color: $fourth-color;
 
             ul {
                 list-style: none;
