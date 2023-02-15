@@ -63,7 +63,6 @@ export default {
 </script>
 
 <template>
-
     <div class="general-container" 
     :class="{
         '': clicked == false,
@@ -73,6 +72,7 @@ export default {
         <AppMain />
         <AppFooter :footerContacts="footerContacts" :footerSocials="footerSocials"/>
     </div>
+
 
     <div class="general-menu" 
     :class="{
