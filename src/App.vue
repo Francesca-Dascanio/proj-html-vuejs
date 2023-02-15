@@ -60,13 +60,8 @@ export default {
                 'fa-brands fa-instagram',
             ]
         }
-    },
-    methods: {
-        book: function () {
-            alert('CONFIRMATION: your appointment is successfully submitted!')
-        }
     }
-
+    
 }
 
 </script>
@@ -77,7 +72,7 @@ export default {
         'not-visible': appointment == false,
         'visible': appointment == true
     }">
-        <AppModal @getOff="appointment = false" @book="book()"/>
+        <AppModal @getOff="appointment = false" />
     </div>
 
     <div class="general-container" 
